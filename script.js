@@ -27,8 +27,8 @@ document.addEventistener("DOMContentLoaded" , function () {
 // script.js
 
 // Connect to the MySQL database
-const mysql = require('mysql');
-const connection = mysql.createConnection({
+import { createConnection } from 'mysql';
+const connection = createConnection({
   host: 'localhost',
   user: 'root',
   password: '9889anshiee9889aA@',
@@ -73,7 +73,7 @@ function deleteClient(clientId) {
 }
 
 // Export the functions
-module.exports = {
+export default {
   addClient,
   editClient,
   deleteClient,

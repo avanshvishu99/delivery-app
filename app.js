@@ -5,7 +5,7 @@ import 'static';
 const app = express();
 import script from './script.js';
 const port = 3306;
-import express, { json, urlencoded, static } from 'express';
+import express, { json, urlencoded } from 'express';
 //these four constructor should be studied
 import mongoose from 'mongoose';
 import session from 'express-session';
@@ -28,6 +28,17 @@ const connection =
 	user: 'root',
 	password: 'anshiee9889aA@',
 	database: 'mysql',
+});
+
+// filepath: c:\Users\4GIN\Desktop\programs\webDevelop\delivery app\app.js
+import dotenv from 'dotenv';
+dotenv.config();
+
+const connection = createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
 });
 
 connection.connect((err) => {
